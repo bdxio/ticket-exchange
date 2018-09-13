@@ -92,7 +92,7 @@ exports.createExchange = functions.https.onRequest((req, res) => {
 
   return appendPromise({
     spreadsheetId: CONFIG_SHEET_ID,
-    range: "A:G",
+    range: "A:H",
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     resource: {
@@ -104,7 +104,8 @@ exports.createExchange = functions.https.onRequest((req, res) => {
           body.commandNumber,
           body.recipientFirstname,
           body.recipientLastname,
-          body.recipientEmail
+          body.recipientEmail,
+          new Date()
         ]
       ]
     }
